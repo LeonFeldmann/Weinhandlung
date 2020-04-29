@@ -1,0 +1,200 @@
+<h4 class="viewHeadline bottom-buffer">Verkaufsliste</h4>
+
+<div class="mainListView top-buffer">
+
+    <div class="currentCustomerDetailsContainer">
+      <h4>Kundendaten:</h4>
+    
+      <p><span class="attributeSpan">Name:</span> Mike Müller</p>
+      <p><span class="attributeSpan">Adresse:</span> Bergstraße 7, 99999 Stadt</p>
+      <p><span class="attributeSpan">E-Mail:</span> Mike.Mueller@gmx.de</p>
+    
+    </div>
+
+
+    <div class="tableContainer">
+
+      <table id="currentPurchaseListTable" class="table table-striped table-bordered top-buffer" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Lage</th>
+                <th>Jahrgang</th>
+                <th>Anzahl</th>
+                <th>Details</th>
+                <th>Entfernen</th>
+            </tr>
+        </thead>
+        <tbody id="currentPurchaseListTableBody">
+            <tr>
+                <td>Test Guter Wein 2</td>
+                <td>Baden</td>
+                <td>2018</td>
+                <td>20</td>
+                <td data-toggle="modal" data-target="#wineDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+            <tr>
+                <td>Guter Wein 1</td>
+                <td>Italien</td>
+                <td>2005</td>
+                <td>25</td>
+                <td><i class="fas fa-info"></i></td>
+                <td><i class="far fa-minus-square"></i></td>
+            </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+    
+
+
+
+
+    <div class="purchaseListButtonOuterContainer">
+
+      <div class="purchaseListButtonsInnerContainer">
+
+        <button type="button" class="btn btn-outline-danger align-left">Verkaufsliste löschen</button>
+        <button type="button" class="btn btn-outline-primary align-right">Kauf abschließen</button>
+        <button type="button" class="btn btn-outline-success align-right">Sichern</button>
+
+        
+      </div>
+      
+    </div>
+
+  
+</div>
+
+
+
+<div class="currentCustomersListContainer">
+  <div class="addCustomerListButtonContainer">
+    <button id="addCustomerListButton" type="button" class="btn btn-outline-primary" data-target="#customerListAddModal" data-toggle="modal"><i class="far fa-plus-square"></i> Verkaufsliste</button>
+  </div>
+
+    <ul class="list-group">
+      <li id="Kunde1-li" class="list-group-item customerListEntry selected">Mike Müller</li>
+      <li id="Kunde2-li" class="list-group-item customerListEntry">Marvin Maier</li>
+    </ul>
+
+</div>
+
+
+
+
+
+  <!-- Customer Add List Modal -->
+  <div class="modal fade bd-example-modal-lg" id="customerListAddModal" tabindex="-1" role="dialog" aria-labelledby="customerListAddModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customerListAddModalLongTitle">Neue Verkaufsliste</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item">Kunde 2</li>
+            <li class="list-group-item">Kunde 3</li>
+            <li class="list-group-item">Kunde 4</li>
+            <li class="list-group-item">Kunde 5</li>
+          </ul>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<script src="./views/verkaufslisteView.js"></script>

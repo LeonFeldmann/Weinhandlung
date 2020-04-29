@@ -1,0 +1,26 @@
+.align-right {
+    float: right;
+}
+
+body {
+    background-image: url("./images/loginBackgroundImage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;}
+
+.loginContainer {
+    width: 50%;
+    margin: 250px auto;
+}
+
+.buttonsContainer {
+    margin-top: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: #4285F4;
+}

@@ -1,0 +1,44 @@
+<h1 class="bottom-buffer">Datensicherung</h1>
+
+
+<div class="container top-buffer">
+    <div class="row">
+      <div class="col-6">
+        <h4 class="bottom-buffer">Letzte Datensicherungen</h4>
+        <ul id="datensicherungHistoryList" class="list-group">
+            <li class="list-group-item">10.10.2018</li>
+            <li class="list-group-item">12.12.2017</li>
+          </ul>
+      </div>
+      <div class="col-6">
+        <div class="row datensicherungWrapper">
+            <button id="datensicherungButton" type="button" class="btn btn-outline-primary bottom-buffer" onclick="doBackup()">Datensicherung durchführen</button>
+        </div>
+        <div class="row datensicherungWrapper">
+            <div id="datensicherungSpinner" class="spinner-border text-primary" role="status" hidden>
+                <span class="sr-only">doing backup</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+      function doBackup() {
+          $('#datensicherungButton').attr('disabled', true);
+          $('#datensicherungSpinner').attr('hidden', false);
+
+          setTimeout(() => {
+
+            $('#datensicherungButton').attr('disabled', false);
+            $('#datensicherungSpinner').attr('hidden', true);
+            $('#datensicherungHistoryList').prepend('<li class="list-group-item">12.03.2020</li>');
+
+              
+          }, 2000);
+
+      }
+
+  </script>

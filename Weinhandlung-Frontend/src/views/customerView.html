@@ -1,0 +1,196 @@
+<h4 class="viewHeadline bottom-buffer">Kunden</h4>
+
+<div class="topButtonContainer">
+
+    <button type="button" class="btn btn-outline-primary" data-target="#customerAddModal" data-toggle="modal"><i class="far fa-plus-square"></i> Neuer Kunde</button>
+
+</div>
+
+
+<table id="customerTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Kunden-ID</th>
+            <th>Name</th>
+            <th>Vorname</th>
+            <th>E-Mail</th>
+            <th>Telefon</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody id="customerTableBody">
+        <tr>
+            <td>12381</td>
+            <td>Müller</td>
+            <td>Mike</td>
+            <td>mike.mueller@gmx.de</td>
+            <td>07221/78332</td>
+            <td data-toggle="modal" data-target="#customerDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+        </tr>
+        <tr>
+            <td>12381</td>
+            <td>Müller</td>
+            <td>Mike</td>
+            <td>mike.mueller@gmx.de</td>
+            <td>07221/78332</td>
+            <td data-toggle="modal" data-target="#customerDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+  
+  <!-- Customer Edit Modal -->
+  <div class="modal fade bd-example-modal-lg" id="customerDetailsModalCenter" tabindex="-1" role="dialog" aria-labelledby="customerDetailsModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customerDetailsModalLongTitle">Mike Müller</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="detailsContainer">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input id="customerNameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Vorname</span>
+                    </div>
+                    <input id="customerVornameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">E-Mail</span>
+                    </div>
+                    <input id="customerEmailInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Telefon</span>
+                    </div>
+                    <input id="customerTelefonInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Straße</span>
+                    </div>
+                    <input id="customerStraßeInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">PLZ</span>
+                    </div>
+                    <input id="customerPLZInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ort</span>
+                    </div>
+                    <input id="customerOrtInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger align-left">Kunde entfernen</button>
+          <button type="button" class="btn btn-outline-primary align-right">Sichern</button>
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- Customer Add Modal -->
+  <div class="modal fade bd-example-modal-lg" id="customerAddModal" tabindex="-1" role="dialog" aria-labelledby="customerAddModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customerAddModalLongTitle">Neuen Kunden hinzufügen</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="detailsContainer">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input id="newCustomerNameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Vorname</span>
+                    </div>
+                    <input id="newCustomerVornameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">E-Mail</span>
+                    </div>
+                    <input id="newCustomerEmailInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Telefon</span>
+                    </div>
+                    <input id="newCustomerTelefonInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Straße</span>
+                    </div>
+                    <input id="newCustomerStraßeInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">PLZ</span>
+                    </div>
+                    <input id="newCustomerPLZInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ort</span>
+                    </div>
+                    <input id="newCustomerOrtInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary align-right">Hinzufügen</button>
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<script src="./views/customerView.js"></script>

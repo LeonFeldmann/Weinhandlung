@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "$": "writable",
+    "loadWineIntoTable": "writable",
+    "apiServerAddress": "writable"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "no-restricted-globals": "off"
+  }
+}

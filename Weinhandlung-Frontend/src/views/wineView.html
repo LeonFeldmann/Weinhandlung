@@ -1,0 +1,523 @@
+<h4 class="viewHeadline bottom-buffer">Weine</h4>
+
+<div class="topButtonContainer">
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    data-target="#wineAddModal"
+    data-toggle="modal"
+  >
+    <i class="far fa-plus-square"></i> Neuer Wein
+  </button>
+</div>
+
+<table
+  id="wineTable"
+  class="table table-striped table-bordered"
+  style="width: 100%;"
+>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lage</th>
+      <th>Jahrgang</th>
+      <th>Anzahl</th>
+      <th>Details</th>
+      <th>Verkaufsliste</th>
+    </tr>
+  </thead>
+  <tbody id="wineTableBody"></tbody>
+</table>
+
+<!-- add to purchaselist Modal -->
+<div
+  class="modal fade"
+  id="addToPurchaseListModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="addToPurchaseListModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addToPurchaseListModalLabel">
+          Zu Verkaufsliste hinzufügen
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+          </div>
+          <p
+            id="wineNameField"
+            type="text"
+            class="form-control"
+            aria-label="Small"
+            aria-describedby="inputGroup-sizing-sm"
+          ></p>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm"
+              >Anzahl</span
+            >
+          </div>
+          <input id="wineAmountPurchaseList" type="number" value="42" />
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm"
+              >Kunde</span
+            >
+          </div>
+          <div class="btn-group">
+            <button
+              id="customerSelected"
+              type="button"
+              class="btn btn-outline-success dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Kunde wählen
+            </button>
+            <div class="dropdown-menu">
+              <a
+                id="dropdown-1"
+                class="dropdown-item"
+                href="#"
+                onclick="updateCustomerSelected()"
+                >Mike Müller</a
+              >
+              <a
+                id="dropdown-2"
+                class="dropdown-item"
+                href="#"
+                onclick="updateCustomerSelected()"
+                >Marvin Maier</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary align-left"
+          data-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+        <button type="button" class="btn btn-outline-primary align-right">
+          Hinzufügen
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wine Edit Modal -->
+<div
+  class="modal fade bd-example-modal-lg"
+  id="wineDetailsModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="wineDetailsModalTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wineDetailsModalLongTitle"></h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="detailsContainer">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Wein-ID</span
+              >
+            </div>
+            <p
+              id="wineIDField"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            ></p>
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Name</span
+              >
+            </div>
+            <input
+              id="wineNameInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Region</span
+              >
+            </div>
+            <input
+              id="wineRegionInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Lage</span
+              >
+            </div>
+            <input
+              id="wineLocationInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Herkunftsland</span
+              >
+            </div>
+            <input
+              id="wineOriginCountryInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Jahrgang</span
+              >
+            </div>
+            <input
+              id="wineYearInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Einkaufspreis</span
+              >
+            </div>
+            <input
+              id="wineBuyingPriceInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Verkaufspreis</span
+              >
+            </div>
+            <input
+              id="wineSellingPriceInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Anzahl</span
+              >
+            </div>
+            <input id="wineAmountInput" type="number" value="42" /><i
+              class="far fa-plus-square left-buffer"
+            ></i>
+            Verkaufsliste
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Lager</span
+              >
+            </div>
+            <input
+              id="wineStorageLocationInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Bild ändern</span
+              >
+            </div>
+            <input id="newWinzerOrtInput" class="left-buffer" type="file" />
+          </div>
+        </div>
+
+        <div class="pictureContainer">
+          <img
+            id="detailsImage"
+            src="./../assets/images/redWine.jpg"
+            alt="Bild vom Wein"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="invalidInputMessageContainer"></div>
+        <button
+          id="deleteWineButton"
+          type="button"
+          class="btn btn-outline-danger align-left"
+        >
+          Wein entfernen
+        </button>
+        <button
+          id="updateWineButton"
+          type="button"
+          class="btn btn-outline-primary align-right"
+        >
+          Sichern
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary align-right"
+          data-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wine Add Modal -->
+<div
+  class="modal fade bd-example-modal-lg"
+  id="wineAddModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="wineAddModalTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="wineAddModalLongTitle">
+          Neuen Wein hinzufügen
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="detailsContainer">
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Name</span
+              >
+            </div>
+            <input
+              id="newWineNameInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Region</span
+              >
+            </div>
+            <input
+              id="newWineRegionInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Lage</span
+              >
+            </div>
+            <input
+              id="newWineLocationInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Herkunftsland</span
+              >
+            </div>
+            <input
+              id="newWineOriginCountryInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Jahrgang</span
+              >
+            </div>
+            <input
+              id="newWineYearInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Einkaufspreis</span
+              >
+            </div>
+            <input
+              id="newWineBuyingPriceInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Verkaufspreis</span
+              >
+            </div>
+            <input
+              id="newWineSellingPriceInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Anzahl</span
+              >
+            </div>
+            <input id="newWineAmountInput" type="number" />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Lager</span
+              >
+            </div>
+            <input
+              id="newWineStorageLocationInput"
+              type="text"
+              class="form-control"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Bild hinzufügen</span
+              >
+            </div>
+            <input id="newWinzerOrtInput" class="left-buffer" type="file" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="invalidInputMessageContainer"></div>
+        <button
+          type="button"
+          class="btn btn-outline-primary align-right"
+          onclick="addNewWine()"
+        >
+          Hinzufügen
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-secondary align-right"
+          data-dismiss="modal"
+        >
+          Abbrechen
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./views/wineView.js"></script>

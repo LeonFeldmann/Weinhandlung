@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <script src="./../node_modules/jquery/dist/jquery.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/mainWindow.css">
+
+  </head>
+  <body>
+
+    <div class="leftNavbar-first">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" onclick="loadVerkaufslisteView()"><span class="iconSpan"><i class="far fa-list-alt"></i></span> Verkaufsliste</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="loadWineView()"><span class="iconSpan"><i class="fas fa-wine-glass-alt"></i></span> Wein</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="loadCustomerView()"><span class="iconSpan"><i class="fas fa-user-friends"></i></span> Kunden</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="loadWinzerView()"><span class="iconSpan"><i class="fas fa-wine-bottle"></i></span> Winzer</a>
+        </li>
+        <div class="bottomNavItems">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="logoutUser()"><span class="iconSpan"><i class="fas fa-sign-out-alt"></i></span> Abmelden</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="loadBackupView()"><span class="iconSpan"><i class="fas fa-server"></i></span> Datensicherung</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+
+
+    <div class="app-content">
+
+      <div class="currentViewContainer">
+        <div id="currentViewContent">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}
+    </script>
+    <script src="./../node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="./mainWindow.js"></script>
+    <script>if (window.module) module = window.module;</script>
+  </body>
+</html>

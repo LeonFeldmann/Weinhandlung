@@ -1,0 +1,296 @@
+/* Colors: Rose red and blueberry
+
+#4285F4 - blue
+#5C2018 - brown-red
+#BC4639 - red
+#D4A59A - beige
+#F3E0DC - Whiteish
+
+*/
+
+/* utility classes */
+.left-buffer {
+  margin-left: 20px;
+}
+
+.bottom-buffer {
+  margin-bottom: 20px;
+}
+
+.top-buffer {
+  margin-top: 20px;
+}
+
+.right-buffer {
+  margin-right: 20px;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+.input-group-text {
+  float: right;
+}
+
+.invalidInput {
+  border-color: red;
+}
+
+.invalidInputMessage {
+  margin-bottom: 0px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  min-height: 100%;
+  height: 100%;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.viewHeadline {
+  text-align: center;
+}
+
+/* Navbar Styles */
+
+.active {
+  background-color: #d4a59a;
+}
+
+.leftNavbar-first {
+  background-color: #5c2018;
+  min-width: 12rem;
+  width: 12rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+a {
+  color: #fff;
+}
+/* change the brand and text color */
+.leftNavbar-first .navbar-brand,
+.leftNavbar-first .navbar-text {
+  color: #d4a59a;
+}
+/* change the link color */
+.leftNavbar-first .navbar-nav .nav-link {
+  color: #d4a59a;
+}
+/* change the color of active or hovered links */
+.leftNavbar-first .nav-item.active .nav-link,
+.leftNavbar-first .nav-item:hover .nav-link {
+  color: #f3e0dc;
+}
+
+.bottomNavItems {
+  margin-top: 60vh;
+}
+
+.app-content {
+  width: calc(100% - 12rem);
+  margin-left: 12rem;
+  transition: all 0.4s;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.currentViewContainer {
+  width: 90%;
+  margin: 10px auto;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -17rem;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active {
+    margin-left: 17rem;
+    width: calc(100% - 17rem);
+  }
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+/* icons */
+.fas {
+  color: #fff !important;
+}
+
+.iconSpan {
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* table */
+
+.tableContainer {
+  height: 68vh;
+}
+
+.dataTables_filter {
+  text-align: left !important;
+}
+
+.dataTables_filter label {
+  width: 90% !important;
+}
+
+.dataTables_filter input {
+  width: 100% !important;
+}
+
+/* top Buttons */
+.topButtonContainer {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+/* modal */
+.detailsContainer {
+  width: 65%;
+  text-align: left;
+  float: left;
+}
+
+.pictureContainer {
+  width: 30%;
+  float: right;
+  overflow: hidden;
+}
+
+#detailsImage {
+  width: 100%;
+}
+
+.modal-footer {
+  display: block;
+}
+
+.datensicherungWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#datensicherungButton {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#datensicherungSpinner {
+  text-align: center;
+}
+
+/* input-group for modals */
+
+.input-group-prepend {
+  width: 150px;
+  display: block !important;
+}
+
+/* VerkaufslisteView */
+
+.mainListView {
+  display: inline-block;
+  width: 80vh;
+}
+.currentCustomersListContainer {
+  height: 100vh;
+  width: 12rem;
+  min-width: 12rem;
+  float: right;
+  margin-right: -30px;
+}
+
+.currentCustomerDetailsContainer > p {
+  margin-bottom: 0px;
+}
+
+.attributeSpan {
+  display: inline-block;
+  width: 100px;
+}
+
+.selected {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.addCustomerListButtonContainer {
+  height: 45px;
+}
+
+#addCustomerListButton {
+  display: block;
+  float: right;
+  margin-bottom: 5px;
+}
+
+.purchaseListButtonOuterContainer {
+  /* position: absolute;
+    bottom: 0; */
+  margin-bottom: 5px;
+}
+
+.purchaseListButtonInnerContainer {
+  position: relative;
+}
+
+/* WinzerView */
+
+#preislisteLink {
+  color: #4285f4;
+}
+
+#newWinzerOrtInput {
+  width: 200px;
+}

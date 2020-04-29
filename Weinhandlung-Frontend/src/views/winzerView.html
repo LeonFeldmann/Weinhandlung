@@ -1,0 +1,208 @@
+<h4 class="viewHeadline bottom-buffer">Winzer</h4>
+
+<div class="topButtonContainer">
+
+    <button type="button" class="btn btn-outline-primary" data-target="#winzerAddModal" data-toggle="modal"><i class="far fa-plus-square"></i> Neuer Winzer</button>
+
+</div>
+
+
+<table id="winzerTable" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Winzer-ID</th>
+            <th>Name</th>
+            <th>Vorname</th>
+            <th>E-Mail</th>
+            <th>Telefon</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody id="winzerTableBody">
+        <tr>
+            <td>7979237</td>
+            <td>Weinberg</td>
+            <td>Werner</td>
+            <td>weinberg@gmx.de</td>
+            <td>07232/25343</td>
+            <td data-toggle="modal" data-target="#winzerDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+        </tr>
+        <tr>
+            <td>342389</td>
+            <td>Weinhügel</td>
+            <td>Herbert</td>
+            <td>weinhuegel@gmx.de</td>
+            <td>07335/89234</td>
+            <td data-toggle="modal" data-target="#winzerDetailsModalCenter" onclick="loadDetailsIntoModal(12345)"><i class="fas fa-info"></i></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+  
+  <!-- Winzer Edit Modal -->
+  <div class="modal fade bd-example-modal-lg" id="winzerDetailsModalCenter" tabindex="-1" role="dialog" aria-labelledby="winzerDetailsModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winzerDetailsModalLongTitle">Mike Müller</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="detailsContainer">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input id="winzerNameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Vorname</span>
+                    </div>
+                    <input id="winzerVornameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">E-Mail</span>
+                    </div>
+                    <input id="winzerEmailInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Telefon</span>
+                    </div>
+                    <input id="winzerTelefonInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Straße</span>
+                    </div>
+                    <input id="winzerStraßeInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">PLZ</span>
+                    </div>
+                    <input id="winzerPLZInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ort</span>
+                    </div>
+                    <input id="winzerOrtInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Preisliste</span>
+                    </div>
+                    <a id="preislisteLink" href="#">Preisliste</a><input id="newWinzerOrtInput" class="left-buffer" type="file">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger align-left">Winzer entfernen</button>
+          <button type="button" class="btn btn-outline-primary align-right">Sichern</button>
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- Winzer Add Modal -->
+  <div class="modal fade bd-example-modal-lg" id="winzerAddModal" tabindex="-1" role="dialog" aria-labelledby="winzerAddModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winzerAddModalLongTitle">Neuen Winzer hinzufügen</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="detailsContainer">
+
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    </div>
+                    <input id="newWinzerNameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Vorname</span>
+                    </div>
+                    <input id="newWinzerVornameInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">E-Mail</span>
+                    </div>
+                    <input id="newWinzerEmailInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Telefon</span>
+                    </div>
+                    <input id="newWinzerTelefonInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Straße</span>
+                    </div>
+                    <input id="newWinzerStraßeInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">PLZ</span>
+                    </div>
+                    <input id="newWinzerPLZInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Ort</span>
+                    </div>
+                    <input id="newWinzerOrtInput" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Preisliste</span>
+                    </div>
+                    <input id="newWinzerOrtInput" type="file">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary align-right">Hinzufügen</button>
+          <button type="button" class="btn btn-outline-secondary align-right" data-dismiss="modal">Abbrechen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<script src="./views/winzerView.js"></script>
