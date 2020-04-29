@@ -14,5 +14,5 @@ get Request auf http://localhost:3003/initializeDB
 
 Starten des Frontends:
 mit der Shell in den Ordner Weinhandlung-Frontend navigieren
-dependencies installieren: `npm -i`
+dependencies installieren: `npm i`
 electron app starten `npm start`
