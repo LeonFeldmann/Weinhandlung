@@ -7,6 +7,4 @@ in der Shell/Bash in diesen Ordner navigieren
 -Docker Desktop starten
 -Befehl `docker-compose up -d`ausführen
 -Stoppen des Backends mit `docker-compose down -v`
--Initialisierung der Datenbank ist momentan noch nötig
-get Request auf http://localhost:3003/initializeDB 
-
+-Initialisierung der Datenbank ist nicht nötig, die Development routes stehen aber dennoch zur Verfügung
